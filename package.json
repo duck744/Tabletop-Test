@@ -1,0 +1,8 @@
+{
+  "name": "tabletop-hall",
+  "version": "0.1.0",
+  "description": "Multiplayer tabletop RPG table with a ruleset engine (D&D 5.5e SRD, Pathfinder 1e, Call of Cthulhu 7e, custom). Zero dependencies.",
+  "main": "server/index.js",
+  "scripts": { "start": "node server/index.js", "test": "node server/smoke-test.js" },
+  "engines": { "node": ">=18" }
+}
