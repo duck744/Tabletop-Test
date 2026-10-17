@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tabletop Hall</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 6 90 28v44L50 94 10 72V28z' fill='%23c53131'/%3E%3Ctext x='50' y='62' font-size='40' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3E20%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<div id="app"></div>
+<div id="floaters"></div>
+<div id="overlay"></div>
+<div id="toasts"></div>
+<div id="conn" class="conn hidden">Reconnecting to the table…</div>
+<script>
+// Lets the server's engine.js (CommonJS) run in the browser so the creator can preview calculations live.
+window.module = { exports: {} };
+window.require = function () { return { randomInt: function (a, b) { if (b === undefined) { b = a; a = 0; } var r = new Uint32Array(1); crypto.getRandomValues(r); return a + Math.floor(r[0] / 4294967296 * (b - a)); } }; };
+</script>
+<script src="/engine.js"></script>
+<script>window.Engine = window.module.exports;</script>
+<script src="/js/util.js"></script>
+<script src="/js/editor.js"></script>
+<script src="/js/screens.js"></script>
+<script src="/js/creator.js"></script>
+<script src="/js/sheet.js"></script>
+<script src="/js/panels.js"></script>
+<script src="/js/map.js"></script>
+<script src="/js/dm.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>
